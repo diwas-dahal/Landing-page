@@ -1,0 +1,199 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 10vh;
+    align-items: center;
+}
+
+body{
+    font-family: "comic Sans ms";
+    height: 800px;
+}
+
+.logo{
+    margin: 10px;
+}
+
+.logo-container, .nav-links, .cart{
+    display: flex;
+}
+
+.logo-container{
+    flex: 1;
+}
+nav{
+    flex: 2;
+}
+.nav-links{
+    justify-content: space-between;
+    list-style: none;
+}
+.nav-link{
+    text-decoration: none;
+    margin: 4px;
+}
+.cart{
+    flex: 1;
+    justify-content: flex-end;
+}
+.presentation{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+}
+.cover img{
+    width: 40vw;
+    animation: drop 1s ease;
+}
+.introduction{
+    flex: 1;
+}
+
+.intro-text p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.intro-text p:hover{
+    transform: scale(1.1);
+}
+.intro-text h1{
+    background: linear-gradient(to right, rgb(49, 49, 49), rgb(48, 47, 46));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cta-select{
+    font-family: "comic Sans ms";
+    background: transparent;
+    font-size: 20px;
+    width: 100px;
+    border: 2px solid #c36cbb;
+    cursor: pointer;
+    margin: 15px 2px 15px 0px;
+}
+.cta-add{
+    font-family: "comic Sans ms";
+    background: #c36cbb;
+    width: 150px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+.cover img{
+    filter: drop-shadow(0px 10px 7px black);
+
+}
+.bigcircle{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    opacity: 0.7;
+}
+.midcircle{
+    position: absolute;
+    top: 20%;
+    right: 40%;
+    z-index: -1;
+}
+.smallcircle{
+    position: absolute;
+    right: 60%;
+    bottom: 0%;
+    z-index: -1;
+}
+.laptop-select{
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 17%;
+}
+@keyframes drop{
+    0%{
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+@media screen and (max-width: 1024px){
+    .presentation{
+        flex-direction: column;
+    }
+    .introduction{
+        margin-top: 15px;
+        text-align: center;
+    }
+    .intro-text h1{
+        margin-bottom: 15px;
+    }
+}
+input{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+.check{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #092c32;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 1s;
+}
+input:checked ~ .check{
+    background: wheat;
+    box-shadow: 0 0 0 2000px #092c32;
+    z-index: -2;
+}
+
+.check::before{
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 1s;
+} 
+
+input:checked ~ .check::before{
+    transform: translateX(-50px);
+
+}
+
+.check::after{
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #092c32;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 1s;
+    transform: translateX(-50px);
+
+} 
+
+input:checked ~ .check::after{
+    transform: translateX(0px);
+}
